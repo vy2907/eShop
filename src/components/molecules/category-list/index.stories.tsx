@@ -4,31 +4,37 @@ import { ICategory } from 'src/model/iCategory';
 import { CategoryList } from '.';
 import { Category } from 'src/components/atoms/category';
 
+import hatsImage from 'src/assets/images/hats.png';
+import jacketsImage from 'src/assets/images/jackets.png';
+import menImage from 'src/assets/images/men.png';
+import sneakersImage from 'src/assets/images/sneakers.png';
+import womensImage from 'src/assets/images/womens.png';
+
 export const categories: ICategory[] = [
   {
     id: 1,
     title: 'hats',
-    imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+    imageUrl: hatsImage,
   },
   {
     id: 2,
     title: 'jackets',
-    imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+    imageUrl: jacketsImage,
   },
   {
     id: 3,
     title: 'sneakers',
-    imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+    imageUrl: sneakersImage,
   },
   {
     id: 4,
     title: 'womens',
-    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+    imageUrl: womensImage,
   },
   {
     id: 5,
     title: 'mens',
-    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+    imageUrl: menImage,
   },
 ];
 
