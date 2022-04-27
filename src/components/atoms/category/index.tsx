@@ -1,6 +1,5 @@
 import React from 'react';
 import { ICategory } from 'src/model/iCategory';
-
 export interface CategoryProps {
   category: ICategory;
 }

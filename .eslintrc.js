@@ -28,7 +28,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     camelcase: 0,
-    'no-alert': 2,
+    'no-alert': 0,
     'no-console': 1,
     'react/prop-types': 'off',
   },

@@ -1,37 +1,24 @@
-import { useEffect } from 'react';
-import { getRedirectResult } from 'firebase/auth';
 import React from 'react';
-import {
-  auth,
-  createUserDocumentFromAuth,
-  signInWithGooglePopup,
-  signInWithGoogleRedirect,
-} from 'src/setting/firebase';
+import { SignInForm } from 'src/components/molecules/sign-in-form';
+
+import { SignUpForm } from 'src/components/molecules/sign-up-form';
 
 export const SignIn: React.FC = () => {
-  useEffect(() => {
-    const redirectResult = async () => {
-      const response = await getRedirectResult(auth);
-      if (response) {
-        await createUserDocumentFromAuth(response.user);
-      }
-    };
-    redirectResult().catch(console.error);
-  }, []);
-  const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
-  };
+  // //Sign In With Redirect
+  // useEffect(() => {
+  //   const redirectResult = async () => {
+  //     const response = await getRedirectResult(auth);
+  //     if (response) {
+  //       await createUserDocumentFromAuth(response.user);
+  //     }
+  //   };
+  //   redirectResult().catch(console.error);
+  // }, []);
 
   return (
     <div className="a-sign-in">
-      <h1>Signin page</h1>
-      <button className="a-sign-in__button" onClick={logGoogleUser}>
-        Sign in with google popup
-      </button>
-      <button className="a-sign-in__button" onClick={signInWithGoogleRedirect}>
-        Sign in with google redirect
-      </button>
+      <SignInForm />
+      <SignUpForm />
     </div>
   );
 };

@@ -10,9 +10,10 @@ export const FormInput: React.FC<FromtInputProps> = props => {
   const labelRef = useRef<HTMLLabelElement>(null);
   const handleOnChangeEvent = (e: React.ChangeEvent<HTMLInputElement>) => {
     const lengthInput = e.target.value.length;
+    const containslabel = labelRef.current?.classList.contains('m-form-input__label-shrink');
 
     if (lengthInput > 0) {
-      labelRef.current?.classList.toggle('m-form-input__label-shrink');
+      !containslabel && labelRef.current?.classList.toggle('m-form-input__label-shrink');
     } else {
       labelRef.current?.classList.remove('m-form-input__label-shrink');
     }
