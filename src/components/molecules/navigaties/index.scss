@@ -19,5 +19,13 @@
     align-items: center;
     justify-content: flex-end;
     list-style: none;
+
+    &--signout {
+      padding: 10px 15px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      text-transform: uppercase;
+    }
   }
 }

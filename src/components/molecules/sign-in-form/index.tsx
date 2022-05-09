@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'src/components/atoms/button';
-import {
-  createUserDocumentFromAuth,
-  signInAuthUserWithEmailAndPassword,
-  signInWithGooglePopup,
-} from 'src/setting/firebase';
+import { signInAuthUserWithEmailAndPassword, signInWithGooglePopup } from 'src/setting/firebase';
 import { FormInput } from '../form-input';
 
 const defaultFormFields = {
@@ -16,23 +12,19 @@ export const SignInForm: React.FC = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  console.log(formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(email, password);
-      console.log(response);
+      const user = await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
       // eslint-disable-next-line no-empty
     } catch (error: any) {
@@ -70,7 +62,7 @@ export const SignInForm: React.FC = () => {
           label={'Password'}
         />
         <div className="m-sign-in-form__button-container">
-          <Button type="submit">Sign up</Button>
+          <Button type="submit">Sign in</Button>
           <Button type="button" modifiers="google-sign-in" onClickRequest={signInWithGoogle}>
             Google sign in
           </Button>

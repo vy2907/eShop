@@ -6,9 +6,12 @@ import {
   User,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  NextOrObserver,
 } from 'firebase/auth';
 
-import { getFirestore, doc, getDoc, setDoc, DocumentReference, DocumentData } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -72,3 +75,8 @@ export const signInAuthUserWithEmailAndPassword = async (email: string, password
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback: NextOrObserver<User>) =>
+  onAuthStateChanged(auth, callback);
