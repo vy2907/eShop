@@ -6,7 +6,7 @@ import App from './App';
 import { UserProvider } from './setting/context/user.context';
 import { ProductProvider } from './setting/context/product.context';
 import './index.css';
-import { CartProvider } from './setting/context/card.context';
+import { CartProvider } from './setting/context/cart.context';
 
 ReactDOM.render(
   <React.StrictMode>

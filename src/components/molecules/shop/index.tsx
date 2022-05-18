@@ -7,13 +7,8 @@ export const Shop: React.FC = () => {
 
   return (
     <div className="m-shop">
-      {products.map(IProduct => (
-        <ProductCard
-          key={IProduct.id}
-          name={IProduct.name}
-          imageUrl={IProduct.imageUrl}
-          price={IProduct.price}
-        />
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

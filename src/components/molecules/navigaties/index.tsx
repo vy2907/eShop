@@ -4,7 +4,7 @@ import logo from 'src/assets/images/logo.svg';
 import { DropdownCard } from 'src/components/atoms/dropdown-card';
 import { IconCart } from 'src/components/atoms/icon-cart';
 import { NavigatyItem } from 'src/components/atoms/navigaty-item';
-import { CartContext } from 'src/setting/context/card.context';
+import { CartContext } from 'src/setting/context/cart.context';
 import { UserContext } from 'src/setting/context/user.context';
 import { signOutUser } from 'src/setting/firebase';
 
