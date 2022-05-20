@@ -10,8 +10,8 @@ export const ItemCart: React.FC<CartItemProps> = ({ cartItem }) => {
     <div className="a-cart-item">
       <img src={imageUrl} alt={`${name}`} />
       <div className="a-cart-item__details">
-        <span className="a-cart-item__details--name">{name}</span>
-        <span className="a-cart-item__details--price">
+        <span className="a-cart-item__name">{name}</span>
+        <span className="a-cart-item__price">
           {quantity} x ${price}
         </span>
       </div>

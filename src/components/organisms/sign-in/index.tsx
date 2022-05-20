@@ -1,6 +1,5 @@
 import React from 'react';
 import { SignInForm } from 'src/components/molecules/sign-in-form';
-
 import { SignUpForm } from 'src/components/molecules/sign-up-form';
 
 export const SignIn: React.FC = () => {
@@ -16,7 +15,7 @@ export const SignIn: React.FC = () => {
   // }, []);
 
   return (
-    <div className="a-sign-in">
+    <div className="o-sign-in">
       <SignInForm />
       <SignUpForm />
     </div>
