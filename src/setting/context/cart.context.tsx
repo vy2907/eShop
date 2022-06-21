@@ -1,5 +1,5 @@
 import { createContext, Dispatch, SetStateAction, useEffect, useState } from 'react';
-import { IProduct } from './product.context';
+import { IProduct } from './categories.context';
 
 export interface CartItem extends IProduct {
   quantity: number;

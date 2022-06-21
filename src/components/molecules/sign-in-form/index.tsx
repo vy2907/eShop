@@ -36,6 +36,7 @@ export const SignInForm: React.FC = () => {
           alert('no user associated with this email');
           break;
         default:
+          // eslint-disable-next-line no-console
           console.log(error);
       }
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { ProductCard } from './';
-import { IProduct } from 'src/setting/context/product.context';
+import { IProduct } from 'src/setting/context/categories.context';
 
 storiesOf('Components/Atoms/ProductCard', module).add('normal', () => {
   const product: IProduct = {

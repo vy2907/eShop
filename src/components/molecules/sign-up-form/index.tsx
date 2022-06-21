@@ -30,10 +30,12 @@ export const SignUpForm: React.FC = () => {
       const user = await createAuthUserWithEmailAndPassword(email, password);
       if (user) await createUserDocumentFromAuth(user.user, { displayName });
       resetFormFields();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       if (error.code === 'auth/email-already-in-use') {
         alert('Cannot create user, email already in use');
       } else {
+        // eslint-disable-next-line no-console
         console.log('user creation encountered an error', error);
       }
     }

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from 'src/setting/context/cart.context';
-import { IProduct } from 'src/setting/context/product.context';
+import { IProduct } from 'src/setting/context/categories.context';
 import { Button } from '../button';
 
 export interface IProductCard {
