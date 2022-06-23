@@ -2,13 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { ICategory } from 'src/model/iCategory';
 import { CategoryList } from '.';
-import { Category } from 'src/components/atoms/category';
 
 import hatsImage from 'src/assets/images/hats.png';
 import jacketsImage from 'src/assets/images/jackets.png';
 import menImage from 'src/assets/images/men.png';
 import sneakersImage from 'src/assets/images/sneakers.png';
 import womensImage from 'src/assets/images/womens.png';
+import { DirectoryItem } from 'src/components/atoms/directory-item';
+import { directory } from 'src/components/atoms/directory-item/index.stories';
 
 export const categories: ICategory[] = [
   {
@@ -41,7 +42,7 @@ export const categories: ICategory[] = [
 storiesOf('Components/Molecules/CategoryList', module).add('normal', () => (
   <CategoryList>
     {categories.map(category => (
-      <Category key={category.id} category={category} />
+      <DirectoryItem key={category.id} directory={directory} />
     ))}
   </CategoryList>
 ));

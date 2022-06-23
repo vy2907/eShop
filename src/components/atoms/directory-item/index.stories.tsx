@@ -1,14 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { ICategory } from 'src/model/iCategory';
-import { Category } from '.';
 
 import image from 'src/assets/images/hats.png';
+import { DirectoryItem } from '.';
 
-export const category: ICategory = {
+export const directory: ICategory = {
   id: 1,
   title: 'hats',
   imageUrl: image,
 };
 
-storiesOf('Components/Atoms/Category', module).add('normal', () => <Category category={category} />);
+storiesOf('Components/Atoms/DirectoryItem', module).add('normal', () => (
+  <DirectoryItem directory={directory} />
+));

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Category } from './components/atoms/category';
+import { DirectoryItem } from './components/atoms/directory-item';
 import { CategoryList } from './components/molecules/category-list';
 import { categories } from './components/molecules/category-list/index.stories';
 import { Checkout } from './components/molecules/checkout';
@@ -18,12 +18,12 @@ const App: React.FC = () => {
           element={
             <CategoryList>
               {categories.map(category => (
-                <Category key={category.id} category={category} />
+                <DirectoryItem key={category.id} directory={category} />
               ))}
             </CategoryList>
           }
         />
-        <Route path="shop" element={<Shop />} />
+        <Route path="shop/*" element={<Shop />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="checkout" element={<Checkout />} />
       </Route>
